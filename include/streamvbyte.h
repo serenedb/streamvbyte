@@ -43,7 +43,7 @@ static inline
   size_t streamvbyte_max_compressedbytes(const uint32_t length) {
   // number of control bytes:
   size_t cb = (length + 3) / 4;
-  // maximum number of control bytes:
+  // maximum number of bytes:
   size_t db = (size_t)length * sizeof(uint32_t);
   return cb + db + STREAMVBYTE_PADDING;
 }
