@@ -26,17 +26,31 @@ size_t streamvbyte_encode(const uint32_t* in, uint32_t length, uint8_t* out);
 // using 1,2,3 or 4 bytes. This might be useful when there's a lot of zeros in the input array.
 size_t streamvbyte_encode_0124(const uint32_t* in, uint32_t length, uint8_t* out);
 
+
+#ifdef __cplusplus
+}
+#endif
+
 // return the maximum number of compressed bytes given length input integers
 // in the worst case we overestimate data bytes required by four, see below
 // for a function you can run upfront over your data to compute allocations
 // It includes the STREAMVBYTE_PADDING bytes.
-static inline size_t streamvbyte_max_compressedbytes(const uint32_t length) {
-   // number of control bytes:
-   size_t cb = (length + 3) / 4;
-   // maximum number of control bytes:
-   size_t db = (size_t)length * sizeof(uint32_t);
-   return cb + db + STREAMVBYTE_PADDING;
+#ifdef __cplusplus
+constexpr
+#else
+static inline
+#endif
+  size_t streamvbyte_max_compressedbytes(const uint32_t length) {
+  // number of control bytes:
+  size_t cb = (length + 3) / 4;
+  // maximum number of control bytes:
+  size_t db = (size_t)length * sizeof(uint32_t);
+  return cb + db + STREAMVBYTE_PADDING;
 }
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 // return the exact number of compressed bytes given length input integers
 // runtime in O(n) wrt. in; use streamvbyte_max_compressedbyte if you
