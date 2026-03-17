@@ -54,8 +54,8 @@ STREAMVBYTE_UNTARGET_REGION
 STREAMVBYTE_TARGET_SSE41
 static size_t streamvbyte_encode_SSE41 (const uint32_t* in, uint32_t count, uint8_t* out) {
 	uint32_t keyLen = (count >> 2) + (((count & 3) + 3) >> 2); // 2-bits per each rounded up to byte boundary
-	uint8_t *restrict keyPtr = &out[0];
-	uint8_t *restrict dataPtr = &out[keyLen]; // variable length data after keys
+	uint8_t *__restrict__ keyPtr = &out[0];
+	uint8_t *__restrict__ dataPtr = &out[keyLen]; // variable length data after keys
 
 	for (const uint32_t* end = &in[(count & ~7U)]; in != end; in += 8)
 	{

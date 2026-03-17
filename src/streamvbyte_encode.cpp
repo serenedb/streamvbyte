@@ -8,7 +8,7 @@
 #endif
 
 #ifdef STREAMVBYTE_X64
-#include "streamvbyte_x64_encode.c"
+#include "streamvbyte_x64_encode.cpp"
 #endif
 
 static uint8_t svb_encode_data(uint32_t val, uint8_t *__restrict__ *dataPtrPtr) {
@@ -63,7 +63,7 @@ static uint8_t *svb_encode_scalar(const uint32_t *in,
 
 
 #ifdef STREAMVBYTE_IS_ARM64
-#include "streamvbyte_arm_encode.c"
+#include "streamvbyte_arm_encode.cpp"
 #endif
 
 static size_t svb_data_bytes_scalar(const uint32_t* in, uint32_t length) {

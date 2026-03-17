@@ -4,8 +4,8 @@ project(STREAMVBYTE VERSION "2.0.0")
 set(STREAMVBYTE_LIB_VERSION "2.0.0" CACHE STRING "streamvbyte library version")
 set(STREAMVBYTE_LIB_SOVERSION "2" CACHE STRING "streamvbyte library soversion")
 
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_C_STANDARD_REQUIRED ON)
+# set(CMAKE_C_STANDARD 99)
+# set(CMAKE_C_STANDARD_REQUIRED ON)
 
 include(CheckCCompilerFlag)
 include(GNUInstallDirs)
@@ -98,13 +98,13 @@ if(MSVC)
 endif()
 
 set(STREAMVBYTE_SRCS
-    ${PROJECT_SOURCE_DIR}/src/streamvbyte_encode.c
-    ${PROJECT_SOURCE_DIR}/src/streamvbyte_decode.c
-    ${PROJECT_SOURCE_DIR}/src/streamvbyte_zigzag.c
-    ${PROJECT_SOURCE_DIR}/src/streamvbytedelta_encode.c
-    ${PROJECT_SOURCE_DIR}/src/streamvbytedelta_decode.c
-    ${PROJECT_SOURCE_DIR}/src/streamvbyte_0124_encode.c
-    ${PROJECT_SOURCE_DIR}/src/streamvbyte_0124_decode.c
+    ${PROJECT_SOURCE_DIR}/src/streamvbyte_encode.cpp
+    ${PROJECT_SOURCE_DIR}/src/streamvbyte_decode.cpp
+    ${PROJECT_SOURCE_DIR}/src/streamvbyte_zigzag.cpp
+    ${PROJECT_SOURCE_DIR}/src/streamvbytedelta_encode.cpp
+    ${PROJECT_SOURCE_DIR}/src/streamvbytedelta_decode.cpp
+    ${PROJECT_SOURCE_DIR}/src/streamvbyte_0124_encode.cpp
+    ${PROJECT_SOURCE_DIR}/src/streamvbyte_0124_decode.cpp
 )
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
