@@ -57,7 +57,7 @@ static const uint8_t *svb_decode_scalar_d1_init(uint32_t *outPtr,
 }
 
 #ifdef STREAMVBYTE_X64
-#include "streamvbytedelta_x64_decode.c"
+#include "streamvbytedelta_x64_decode.cpp"
 #endif
 
 size_t streamvbyte_delta_decode(const uint8_t *in, uint32_t *out,

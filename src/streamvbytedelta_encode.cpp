@@ -4,7 +4,7 @@
 #include <string.h> // for memcpy
 
 #ifdef STREAMVBYTE_X64
-#include "streamvbytedelta_x64_encode.c"
+#include "streamvbytedelta_x64_encode.cpp"
 #endif
 
 #ifdef __clang__

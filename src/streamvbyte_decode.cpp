@@ -8,11 +8,11 @@
 #endif
 
 #ifdef STREAMVBYTE_IS_ARM64
-#include "streamvbyte_arm_decode.c"
+#include "streamvbyte_arm_decode.cpp"
 #endif
 
 #ifdef STREAMVBYTE_X64
-#include "streamvbyte_x64_decode.c"
+#include "streamvbyte_x64_decode.cpp"
 #endif // STREAMVBYTE_X64
 
 static inline uint32_t svb_decode_data(const uint8_t **dataPtrPtr, uint8_t code) {

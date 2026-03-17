@@ -9,7 +9,7 @@ typedef uint8x16_t decode_t;
 typedef uint8x8x2_t decode_t;
 #endif
 static inline decode_t  _decode_neon(const uint8_t key,
-					const uint8_t * restrict *dataPtrPtr) {
+					const uint8_t * __restrict__ *dataPtrPtr) {
 
   uint8_t len;
   uint8_t *pshuf = (uint8_t *)&shuffleTable[key];
@@ -35,7 +35,7 @@ static inline decode_t  _decode_neon(const uint8_t key,
   return data;
 }
 
-static void streamvbyte_decode_quad( const uint8_t * restrict *dataPtrPtr, uint8_t key, uint32_t * restrict out ) {
+static void streamvbyte_decode_quad( const uint8_t * __restrict__ *dataPtrPtr, uint8_t key, uint32_t * __restrict__ out ) {
   decode_t data =_decode_neon( key, dataPtrPtr );
 #ifdef __aarch64__
   vst1q_u8((uint8_t *) out, data);
