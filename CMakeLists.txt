@@ -7,8 +7,6 @@ set(STREAMVBYTE_LIB_SOVERSION "3" CACHE STRING "streamvbyte library soversion")
 # set(CMAKE_C_STANDARD 99)
 # set(CMAKE_C_STANDARD_REQUIRED ON)
 
-include(cmake/CPM.cmake)
-
 include(CheckCCompilerFlag)
 include(GNUInstallDirs)
 
@@ -171,6 +169,7 @@ endif()
 option(STREAMVBYTE_ENABLE_TESTS "Enable unit tests for streamvbyte" OFF)
 if(STREAMVBYTE_ENABLE_TESTS)
     if(NOT MSVC)
+        include(cmake/CPM.cmake)
         CPMAddPackage(
             NAME sea_counters
             GITHUB_REPOSITORY lemire/sea_counters
