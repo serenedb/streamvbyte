@@ -109,8 +109,6 @@ set(STREAMVBYTE_SRCS
     ${PROJECT_SOURCE_DIR}/src/streamvbyte_0124_decode.cpp
 )
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-
 add_library(streamvbyte "${STREAMVBYTE_SRCS}")
 target_link_libraries(streamvbyte ${BASE_FLAGS})
 
